@@ -37,8 +37,8 @@ public class PlayerControls : MonoBehaviour {
         if (serialPort.IsOpen) {
             try {
                 string[] data=serialPort.ReadLine().Split(",");
-				value1 = float.Parse(data[1]);
-				value2 = float.Parse(data[2]);
+				value1 = float.Parse(data[1]) * 1000;
+				value2 = float.Parse(data[2]) * 1000;
 				serialPort.DiscardInBuffer();
 				serialPort.DiscardOutBuffer();
 								

@@ -14,8 +14,8 @@ public class PlayerControls : MonoBehaviour {
 	private Vector3 target;
 	private GameObject theBall;
 	private BallControl ballScript;
-	public int value1 = 0;
-	public int value2 = 0;
+	public float value1 = 0;
+	public float value2 = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -37,8 +37,8 @@ public class PlayerControls : MonoBehaviour {
         if (serialPort.IsOpen) {
             try {
                 string[] data=serialPort.ReadLine().Split(",");
-				value1 = int.Parse(data[1]);
-				value2 = int.Parse(data[2]);
+				value1 = float.Parse(data[1]);
+				value2 = float.Parse(data[2]);
 				serialPort.DiscardInBuffer();
 				serialPort.DiscardOutBuffer();
 								
